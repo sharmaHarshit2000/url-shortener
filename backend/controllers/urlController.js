@@ -13,3 +13,17 @@ export const shortenUrl = async (req, res) => {
   }
 };
 
+export const redirectUrl = async (req, res) => {
+  try {
+    const shortUrl = await ShortUrl.findOne({ short_code: req.params.code });
+    if (shortUrl) {
+      shortUrl.click_count += 1;
+      await shortUrl.save();
+      res.redirect(shortUrl.original_url); 
+    } else {
+      res.status(404).send("Short URL not found");
+    }
+  } catch (err) {
+     res.status(500).send('Redirect error');
+  }
+};
