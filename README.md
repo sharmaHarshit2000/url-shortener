@@ -161,8 +161,8 @@ Basic manual testing done using Postman and browser:
 
 ### 🌐 Live Demo
 
-- **Frontend (Vercel):** [https://mern-url-shortener-frontend.vercel.app](https://mern-url-shortener-frontend.vercel.app)
-- **Backend (Render):** [https://url-shortener-3u7c.onrender.com/](https://url-shortener-3u7c.onrender.com/)
+- **Frontend (Vercel):** [https://url-shortener-topaz-six.vercel.app](https://url-shortener-topaz-six.vercel.app)
+- **Backend (Render):** [https://url-shortener-3u7c.onrender.com](https://url-shortener-3u7c.onrender.com)
 
 ---
 
