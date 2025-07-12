@@ -162,7 +162,7 @@ Basic manual testing done using Postman and browser:
 ### 🌐 Live Demo
 
 - **Frontend (Vercel):** [https://mern-url-shortener-frontend.vercel.app](https://mern-url-shortener-frontend.vercel.app)
-- **Backend (Render):** [https://mern-url-shortener-backend.onrender.com](https://mern-url-shortener-backend.onrender.com)
+- **Backend (Render):** [https://url-shortener-3u7c.onrender.com/](https://url-shortener-3u7c.onrender.com/)
 
 ---
 
