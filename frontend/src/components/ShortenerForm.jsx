@@ -28,7 +28,7 @@ const ShortenerForm = ({ onNewShortUrl }) => {
 
         } catch (err) {
             console.error(err);
-            setError('Failed to shorten the URL. Please try again.');
+            setError(err.response?.data?.message || "Something went wrong");
 
         } finally {
             setLoading(false);
@@ -38,7 +38,7 @@ const ShortenerForm = ({ onNewShortUrl }) => {
     return (
         <div className="bg-white p-6 rounded shadow-md max-w-xl mx-auto mt-10">
 
-                {/* {Input Form} */}
+            {/* Input Form */}
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <input
                     type="url"
@@ -60,12 +60,12 @@ const ShortenerForm = ({ onNewShortUrl }) => {
                 </button>
             </form>
 
-            {/* {Error} */}
+            {/* Error */}
             {error && (
                 <p className="text-red-600 text-sm mt-2 text-center">{error}</p>
             )}
 
-              {/* {ShortUrl} */}
+            {/* ShortUrl */}
             {shortUrl && !error && (
                 <div className="mt-4 text-center">
                     <p className="text-lg">
