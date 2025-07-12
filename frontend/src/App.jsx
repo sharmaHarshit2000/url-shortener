@@ -30,11 +30,11 @@ const App = () => {
 
 
   return (
-    <div className='min-h-screen bg-gray-50'>
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <header className='bg-blue-600 text-white py-4 text-center text-xl font-bold shadow'>
         URL Shortener
       </header>
-      <main className="p-4">
+      <main className="flex-grow p-4">
         <ShortenerForm onNewShortUrl={handleNewShortUrl} />
         <HistoryList shortUrls={shortUrls} />
       </main>
