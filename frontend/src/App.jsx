@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ShortenerForm from './components/ShortenerForm';
 import HistoryList from './components/HistoryList';
+import { toast } from 'react-toastify';
 
 const App = () => {
   const [shortUrls, setShortUrls] = useState([]);
@@ -16,7 +17,9 @@ const App = () => {
     );
 
     if (exists) {
-      alert(`This URL is already shortened:\n${exists.short_url}`);
+      toast.info(`Already shortened:\n${exists.short_url}`, {
+        style: { whiteSpace: 'pre-line' }
+      });
       return;
     }
 

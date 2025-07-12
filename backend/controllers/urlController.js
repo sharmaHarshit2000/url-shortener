@@ -3,7 +3,21 @@ import ShortUrl from "../models/ShortUrl.js";
 export const shortenUrl = async (req, res) => {
   const { url } = req.body;
   try {
-    const shortUrl = await ShortUrl.create({ original_url: url });
+    // Check if the URL already exists in DB
+    let shortUrl = await ShortUrl.findOne({ original_url: url });
+
+    // If found, return the existing one
+    if (shortUrl) {
+      return res.status(200).json({
+        message: "Short URL already exists",
+        short_url: `${process.env.BASE_URL}/${shortUrl.short_code}`,
+        original_url: shortUrl.original_url,
+      });
+    }
+
+    // else create new short url
+    shortUrl = await ShortUrl.create({ original_url: url });
+
     res.status(201).json({
       message: "Short URL created successfully",
       short_url: `${process.env.BASE_URL}/${shortUrl.short_code}`,
