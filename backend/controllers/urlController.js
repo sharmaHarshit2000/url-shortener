@@ -12,3 +12,4 @@ export const shortenUrl = async (req, res) => {
     res.status(500).json({ message: `Error shortening URL:${err.message}` });
   }
 };
+
