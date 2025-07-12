@@ -11,6 +11,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// for testing purpose
+app.get("/", (req, res) => {
+  res.send("URL Shortener API is running");
+});
+
 app.use("/", urlRoutes);
 
 const PORT = process.env.PORT || 5000;
