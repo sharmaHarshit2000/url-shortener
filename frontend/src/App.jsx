@@ -23,7 +23,7 @@ const App = () => {
       return;
     }
 
-    const updated = [urlObj, ...shortUrls]
+    const updated = [urlObj, ...shortUrls].slice(0, 5);
     setShortUrls(updated);
     localStorage.setItem("url_history", JSON.stringify(updated));
   };
@@ -38,6 +38,9 @@ const App = () => {
         <ShortenerForm onNewShortUrl={handleNewShortUrl} />
         <HistoryList shortUrls={shortUrls} />
       </main>
+      <footer className="bg-gray-100 text-center text-sm text-gray-500 py-4 border-t">
+        © {new Date().getFullYear()} Harshit Sharma. Built with ❤️ using the MERN stack.
+      </footer>
     </div>
   )
 }
